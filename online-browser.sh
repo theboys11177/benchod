@@ -96,8 +96,8 @@ case $choice in
             -e PUID=1000 \
             -e PGID=1000 \
             -e TZ=Etc/UTC \
-            -p 3000:3000 \
-            -p 3001:3001 \
+            -p 4000:4000 \
+            -p 2001:2001 \
             -v /firefox:/config \
             --shm-size="7gb" \
             --restart unless-stopped \
