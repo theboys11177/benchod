@@ -75,14 +75,14 @@ read -p "of your choice : " choice
 case $choice in
     1)
         echo "Installing Chromium..."
-        docker run -d \
+        udocker run -d \
             --name=chromium \
             --security-opt seccomp=unconfined \
             -e PUID=1000 \
             -e PGID=1000 \
             -e TZ=Etc/UTC \
-            -p 4000:4000 \
-            -p 2001:2001 \
+            -p 3000:3000 \
+            -p 3001:3001 \
             -v /chromium:/config \
             --shm-size="7gb" \
             --restart unless-stopped \
@@ -90,14 +90,14 @@ case $choice in
         ;;
     2)
         echo "Installing Firefox..."
-        docker run -d \
+        udocker run -d \
             --name=firefox \
             --security-opt seccomp=unconfined \
             -e PUID=1000 \
             -e PGID=1000 \
             -e TZ=Etc/UTC \
-            -p 4000:4000 \
-            -p 2001:2001 \
+            -p 3000:3000 \
+            -p 3001:3001 \
             -v /firefox:/config \
             --shm-size="7gb" \
             --restart unless-stopped \
@@ -105,7 +105,7 @@ case $choice in
         ;;
     3)
         echo "Installing Opera..."
-        docker run -d \
+        udocker run -d \
             --name=opera \
             --security-opt seccomp=unconfined \
             -e PUID=1000 \
@@ -120,7 +120,7 @@ case $choice in
         ;;
     4)
         echo "Installing Mullvad Browser..."
-        docker run -d \
+        udocker run -d \
             --name=mullvad-browser \
             --security-opt seccomp=unconfined \
             -e PUID=1000 \
