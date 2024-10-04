@@ -75,7 +75,7 @@ read -p "of your choice : " choice
 case $choice in
     1)
         echo "Installing Chromium..."
-        udocker run -d \
+        udocker run  \
             --name=chromium \
             --security-opt seccomp=unconfined \
             -e PUID=1000 \
