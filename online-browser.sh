@@ -90,7 +90,7 @@ case $choice in
         ;;
     2)
         echo "Installing Firefox..."
-        udocker run -d \
+        udocker run  \
             --name=firefox \
             --security-opt seccomp=unconfined \
             -e PUID=1000 \
